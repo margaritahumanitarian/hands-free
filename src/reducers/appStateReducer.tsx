@@ -1,20 +1,9 @@
-// import exec from 'child_process';
+import { testFileExecCmd } from '../utils/nodeProcesses';
 import computerActions from '../data/computerActions';
 import discordActions from '../data/discordActions';
 import mainActions from '../data/mainActions';
 import { ACTIONTYPE, APPSTATE } from '../utils/constants';
 import { ActionOption } from '../utils/types';
-
-// function execute(command, callback) {
-//   exec(command, (error, stdout, stderr) => {
-//     callback(stdout);
-//   });
-// }
-
-// // call the function
-// execute('ping -c 4 0.0.0.0', (output) => {
-//   console.log(output);
-// });
 
 const appStateReducer = (
   appState: ActionOption,
@@ -89,6 +78,9 @@ const appStateReducer = (
     switch (type) {
       case 'OPEN_APP':
         return { ...appState, script: payload.script };
+      case 'RUN_CMD':
+        testFileExecCmd('./user/scripts/scriptTest');
+        break;
       default:
         break;
     }

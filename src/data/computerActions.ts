@@ -14,6 +14,12 @@ const computerActions: ActionOption[] = [
     state: APPSTATE.browser,
   },
   {
+    type: 'RUN_CMD',
+    title: 'Run Command',
+    actionType: ACTIONTYPE.action,
+    state: APPSTATE.computer,
+  },
+  {
     type: 'OPEN_NOTES',
     title: 'Open Notes',
     actionType: ACTIONTYPE.action,
